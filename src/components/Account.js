@@ -1,6 +1,12 @@
 import React from "react";
 
-const Account = ({ increment, decrement, incrementByAmounts, account }) => {
+const Account = ({
+  store,
+  increment,
+  decrement,
+  incrementByAmount,
+  account,
+}) => {
   // we are not directly pass thing state to parents components thats why i will copy this state and put in app mudule (where is my app componenets ) because its parents of all components
 
   // const [account, setAccount] = useState({ amount: 0 });
@@ -19,10 +25,29 @@ const Account = ({ increment, decrement, incrementByAmounts, account }) => {
       <h3>Account Component </h3>
       <h2>Amount : {account.amount} </h2>
       <div className="flex">
-        <button onClick={increment}>Increment</button>
-        <button onClick={decrement}>decrement</button>
+        <button
+          onClick={() => {
+            store.dispatch(increment());
+          }}
+        >
+          Increment
+        </button>
+        <button
+          onClick={() => {
+            store.dispatch(decrement());
+          }}
+        >
+          decrement
+        </button>
         <input type="" />
-        <button onClick={incrementByAmounts}>Increment by 10 </button>
+        <button
+          o
+          onClick={() => {
+            store.dispatch(incrementByAmount());
+          }}
+        >
+          Increment by 10{" "}
+        </button>
       </div>
     </div>
   );
