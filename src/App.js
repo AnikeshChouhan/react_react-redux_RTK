@@ -3,6 +3,7 @@ import { refresher } from "./actions";
 import "./App.css";
 import Account from "./components/Account";
 import Bonus from "./components/Bonus";
+import Reward from "./components/reward";
 const App = () => {
   const account = useSelector((state) => state.account);
   const bonus = useSelector((state) => state.bonus);
@@ -27,6 +28,10 @@ const App = () => {
       <div className="flex">
         {" "}
         <Bonus />
+      </div>
+      <div className="flex">
+        {" "}
+        <Reward />
       </div>
       <button onClick={() => dispatch(refresher())}>Refresh</button>
     </div>

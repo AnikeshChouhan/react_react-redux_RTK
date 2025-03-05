@@ -45,7 +45,7 @@ export function getUserAccount(id) {
   return async (dispatch, getState) => {
     try {
       dispatch(getAccountUserPending());
-      const response = await axios.get(`http://localhost:8080y/account/${id}`);
+      const response = await axios.get(`http://localhost:8080/account/${id}`);
       // const response = await axios.get(
       //   `https://jsonplaceholder.typicode.com/users`
       // );
