@@ -8,7 +8,7 @@ export const GET_ACC_USER_PENDING = "account/getUser/pending";
 export const GET_ACC_USER_FULFILED = "account/getUser/fulfilled";
 export const GET_ACC_USER_REJECTED = "account/getUser/rejected";
 export const INCBONUS = "bonus/increment";
-
+export const REFRESH = "refresh/dataRefresh";
 // Action creators and its return an Action
 export function initUser(value) {
   return { type: INIT, payload: value };
@@ -33,6 +33,9 @@ export const incrementByAmount = (value) => {
 };
 export const incrementBonus = () => {
   return { type: INCBONUS };
+};
+export const refresher = () => {
+  return { type: REFRESH };
 };
 
 // it is called thunk function beacause its proform async operation

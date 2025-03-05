@@ -1,25 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { decrement, increment, incrementByAmount } from "../actions";
 
-const Account = ({
-  store,
-  increment,
-  decrement,
-  incrementByAmount,
-  account,
-}) => {
-  // we are not directly pass thing state to parents components thats why i will copy this state and put in app mudule (where is my app componenets ) because its parents of all components
+const Account = () => {
+  const [value, setValue] = useState(0);
+  const account = useSelector((state) => state.account);
+  const dispatch = useDispatch();
 
-  // const [account, setAccount] = useState({ amount: 0 });
-  // const [value, setvalue] = useState(0);
-  // const increment = () => {
-  //   setAccount({ amount: account.amount + 1 });
-  // };
-  // const decrement = () => {
-  //   setAccount({ amount: account.amount - 1 });
-  // };
-  // const incrementByAmounts = (value) => {
-  //   setAccount({ amount: account.amount + value });
-  // };
   return (
     <div>
       <h3>Account Component </h3>
@@ -27,26 +14,30 @@ const Account = ({
       <div className="flex">
         <button
           onClick={() => {
-            store.dispatch(increment());
+            dispatch(increment());
           }}
         >
           Increment
         </button>
         <button
           onClick={() => {
-            store.dispatch(decrement());
+            dispatch(decrement());
           }}
         >
           decrement
         </button>
-        <input type="" />
+        <input
+          type="number"
+          onChange={(e) => {
+            setValue(Number(e.target.value));
+          }}
+        />
         <button
-          o
           onClick={() => {
-            store.dispatch(incrementByAmount());
+            dispatch(incrementByAmount(value));
           }}
         >
-          Increment by 10{" "}
+          Increment by {value}
         </button>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import { INCBONUS, INCBYAMT } from "../actions";
+
 export function bonusReducer(state = { points: 0 }, action) {
   switch (action.type) {
     case INCBONUS:
