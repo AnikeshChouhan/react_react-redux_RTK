@@ -11,7 +11,13 @@ const App = () => {
     <div className="margin">
       <div className="color">
         <h4 className="lightpink">App</h4>
-        <h3>Current Amount : {account.amount}</h3>
+        {account.pending ? (
+          <p>LOADING........</p>
+        ) : account.error ? (
+          <p>{account.error}</p>
+        ) : (
+          <h3>Current Amount : {account.amount}</h3>
+        )}
         <h3>Total Bonus : {bonus.points}</h3>
       </div>
       <div className="flex">
