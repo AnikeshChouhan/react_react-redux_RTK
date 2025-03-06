@@ -12,7 +12,7 @@ const Reward = () => {
       <div className="flex">
         <button onClick={() => dispatch(increment())}>Increment</button>
         <button onClick={() => dispatch(incrementByAmount(10))}>
-          Increment
+          Increment by 10
         </button>
       </div>
     </div>

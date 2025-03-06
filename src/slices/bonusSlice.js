@@ -7,6 +7,7 @@ const bonusSlice = createSlice({
   name: "bonus",
   initialState: { points: 0 },
   reducers: {
+    // here we are using immer library
     increment: (state) => {
       state.points++;
     },
