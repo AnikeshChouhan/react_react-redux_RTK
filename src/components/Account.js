@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   decrement,
+  getUserAccount,
   increment,
   incrementByAmount,
 } from "../slices/accountSlice";
@@ -44,13 +45,13 @@ const Account = () => {
           Increment by {value}
         </button>
 
-        {/* <button
+        <button
           onClick={() => {
             dispatch(getUserAccount(2));
           }}
         >
           init Account
-        </button> */}
+        </button>
       </div>
     </div>
   );
