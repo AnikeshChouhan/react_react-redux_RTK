@@ -1,5 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { useSelector } from "react-redux";
+import { createAction, createSlice } from "@reduxjs/toolkit";
+
+const incByAmount = createAction("account/incrementByAmount");
 
 // create Sliceis a API
 const bonusSlice = createSlice({
@@ -7,8 +8,15 @@ const bonusSlice = createSlice({
   initialState: { points: 0 },
   reducers: {
     increment: (state) => {
-      state.points += 1;
+      state.points++;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(incByAmount, (state, action) => {
+      if (action.payload >= 100) {
+        state.points++;
+      }
+    });
   },
 });
 
